@@ -6,9 +6,8 @@ const year = argv['y'] || now.getFullYear();
 const month = argv['m'] || now.getMonth() + 1;
 
 function printCalendarHeader(year, month) {
-  const weekDays = ['日', '月', '火', '水', '木', '金', '土'];
   console.log(`${month}月 ${year}`.padStart(13, ' '));
-  console.log(weekDays.join(' '));
+  console.log(`日 月 火 水 木 金 土`);
 }
 
 function printCalendarDays(year, month) {
