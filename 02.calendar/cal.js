@@ -5,12 +5,10 @@ const now = new Date();
 const year = argv['y'] || now.getFullYear();
 const month = argv['m'] || now.getMonth() + 1;
 
-const SPACE = ' ';
-
 function printCalendarHeader(year, month) {
   const weekDays = ['日', '月', '火', '水', '木', '金', '土'];
-  console.log(`${month}月 ${year}`.padStart(13, SPACE));
-  console.log(weekDays.join(SPACE));
+  console.log(`${month}月 ${year}`.padStart(13, ' '));
+  console.log(weekDays.join(' '));
 }
 
 function printCalendarDays(year, month) {
@@ -20,10 +18,10 @@ function printCalendarDays(year, month) {
   const totalDays = getTotalDays(year, month);
 
   // １日目の出力場所を調整
-  process.stdout.write(`${SPACE.repeat(3).repeat(dayOfWeek)}`);
+  process.stdout.write(`${' '.repeat(3).repeat(dayOfWeek)}`);
 
   for (let day = 1; day <= totalDays; day++) {
-    let dayString = day.toString().padStart(2, SPACE) + SPACE;
+    let dayString = day.toString().padStart(2, ' ') + ' ';
     if (dayOfWeek == 6) {
       console.log(dayString);
       dayOfWeek = 0;
