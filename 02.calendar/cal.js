@@ -12,21 +12,21 @@ function printCalendarHeader(year, month) {
 
 function printCalendarDays(year, month) {
   // 対象年月の1日目の曜日を初期値として取得
-  let dayOfWeek = new Date(year, month - 1, 1).getDay();
+  let firstDayOfWeek = new Date(year, month - 1, 1).getDay();
   // 対象年月の最終日を取得
   const totalDays = new Date(year, month, 0).getDate();
 
   // １日目の出力場所を調整
-  process.stdout.write(`${' '.repeat(3).repeat(dayOfWeek)}`);
+  process.stdout.write(`${' '.repeat(3 * firstDayOfWeek - 1)}`);
 
   for (let day = 1; day <= totalDays; day++) {
-    let dayString = day.toString().padStart(2, ' ') + ' ';
+    let dayOfWeek = new Date(year, month - 1, day).getDay();
     if (dayOfWeek === 6) {
-      console.log(dayString);
-      dayOfWeek = 0;
+      console.log(day.toString().padStart(3, ' '));
+    } else if (dayOfWeek === 0) {
+      process.stdout.write(day.toString().padStart(2, ' '));
     } else {
-      process.stdout.write(dayString);
-      dayOfWeek++;
+      process.stdout.write(day.toString().padStart(3, ' '));
     }
   }
 }
