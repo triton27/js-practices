@@ -12,9 +12,9 @@ function printCalendarHeader(year, month) {
 
 function printCalendarDays(year, month) {
   // 対象年月の1日目の曜日を初期値として取得
-  let dayOfWeek = getDayOfWeek(year, month);
+  let dayOfWeek = new Date(year, month - 1, 1).getDay();
   // 対象年月の最終日を取得
-  const totalDays = getTotalDays(year, month);
+  const totalDays = new Date(year, month, 0).getDate();
 
   // １日目の出力場所を調整
   process.stdout.write(`${' '.repeat(3).repeat(dayOfWeek)}`);
@@ -29,14 +29,6 @@ function printCalendarDays(year, month) {
       dayOfWeek++;
     }
   }
-}
-
-function getDayOfWeek(year, month) {
-  return new Date(year, month - 1, 1).getDay();
-}
-
-function getTotalDays(year, month) {
-  return new Date(year, month, 0).getDate();
 }
 
 printCalendarHeader(year, month);
