@@ -2,8 +2,8 @@ import minimist from 'minimist';
 
 const argv = minimist(process.argv.slice(2));
 const now = new Date();
-const year = argv['y'] || now.getFullYear();
-const month = argv['m'] || now.getMonth() + 1;
+const year = argv.y ?? now.getFullYear();
+const month = argv.m ?? now.getMonth() + 1;
 
 function printCalendarHeader(year, month) {
   console.log(`${month}月 ${year}`.padStart(13, ' '));
