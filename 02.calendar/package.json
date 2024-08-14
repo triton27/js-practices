@@ -1,19 +1,14 @@
 {
-    "name": "proj",
-    "version": "1.0.0",
-    "main": "index.js",
-    "type": "module",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "fix": "prettier --write . && eslint --fix .",
+      "lint": "prettier --check . && eslint ."
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "description": "",
-    "dependencies": {
-      "ejs": "^3.1.10",
-      "express": "^4.19.2",
-      "minimist": "^1.2.8"
-    }
+    "devDependencies": {
+      "@eslint/js": "^9.3.0",
+      "eslint": "^9.3.0",
+      "eslint-config-prettier": "^9.1.0",
+      "globals": "^15.3.0",
+      "prettier": "^3.2.5"
+    },
+    "type": "module"
   }
-  
