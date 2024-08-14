@@ -21,7 +21,7 @@ function printCalendarDays(year, month) {
 
   for (let day = 1; day <= totalDays; day++) {
     let dayString = day.toString().padStart(2, ' ') + ' ';
-    if (dayOfWeek == 6) {
+    if (dayOfWeek === 6) {
       console.log(dayString);
       dayOfWeek = 0;
     } else {
