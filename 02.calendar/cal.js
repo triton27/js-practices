@@ -31,6 +31,7 @@ function printCalendarDays(year, month) {
       process.stdout.write(day.toString().padStart(3, ' '));
     }
   }
+  console.log();
 }
 
 printCalendarHeader(year, month);
