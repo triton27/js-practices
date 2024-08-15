@@ -19,7 +19,7 @@ function printCalendarDays(year, month) {
   const totalDays = new Date(year, month, 0).getDate();
 
   // １日目の出力場所を調整
-  process.stdout.write(`${' '.repeat(3 * firstDayOfWeek - 1)}`);
+  process.stdout.write(`${' '.repeat(Math.max(0, 3 * firstDayOfWeek - 1))}`);
 
   for (let day = 1; day <= totalDays; day++) {
     let dayOfWeek = new Date(year, month - 1, day).getDay();
