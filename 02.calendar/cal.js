@@ -27,13 +27,13 @@ function printCalendarDays(year, month) {
 }
 
 function main() {
-    const argv = minimist(process.argv.slice(2));
-    const now = new Date();
-    const year = argv.y ?? now.getFullYear();
-    const month = argv.m ?? now.getMonth() + 1;
-    
-    printCalendarHeader(year, month);
-    printCalendarDays(year, month);
+  const argv = minimist(process.argv.slice(2));
+  const now = new Date();
+  const year = argv.y ?? now.getFullYear();
+  const month = argv.m ?? now.getMonth() + 1;
+
+  printCalendarHeader(year, month);
+  printCalendarDays(year, month);
 }
 
 main();
