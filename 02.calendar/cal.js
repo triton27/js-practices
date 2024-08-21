@@ -8,12 +8,9 @@ function printCalendarHeader(year, month) {
 }
 
 function printCalendarDays(year, month) {
-  // 対象年月の1日目の曜日を初期値として取得
   let firstDayOfWeek = new Date(year, month - 1, 1).getDay();
-  // 対象年月の最終日を取得
   const totalDays = new Date(year, month, 0).getDate();
 
-  // １日目の出力場所を調整
   process.stdout.write(`${" ".repeat(Math.max(0, 3 * firstDayOfWeek - 1))}`);
 
   for (let day = 1; day <= totalDays; day++) {
